@@ -17,7 +17,27 @@ Replace this paragraph with your own summary of what your version does.
 
 ## How The System Works
 
-Explain your design in plain language.
+This recommender simulates a simple content-based system: it compares a user's preferred vibe to each song's musical attributes, gives higher scores to songs that match the user's style and energy, then ranks the catalog by those scores. In the real world, recommendation systems often combine user preferences, item traits, and interaction signals to surface items that feel familiar yet fresh. My version will prioritize genre and mood alignment first, then use numeric features like energy, valence, tempo, danceability, and acousticness to refine the recommendation.
+
+Specific features used in this simulation:
+
+- `Song`: `genre`, `mood`, `energy`, `tempo_bpm`, `valence`, `danceability`, `acousticness`
+- `UserProfile`: `favorite_genre`, `favorite_mood`, `target_energy`, `likes_acoustic`
+
+### Algorithm Recipe
+
+1. **Input**: User preferences (genre, mood, target energy) and song catalog from `data/songs.csv`
+2. **Scoring Rule** (for one song):
+   - +2.0 points for genre match
+   - +1.0 point for mood match
+   - Energy similarity: `1.0 - abs(song.energy - user.target_energy)` (closer energy = higher score)
+   - Optional: Small weights for valence, tempo, etc., as secondary vibe signals
+   - Total score = sum of above
+3. **Ranking Rule**: Compute score for every song, sort descending by score, return top K recommendations
+
+### Potential Biases
+
+This system might over-prioritize genre, potentially ignoring great songs that match the user's mood or energy but come from different genres. It could also favor songs with extreme energy values if the user's target is at the edges, and it lacks diversity mechanisms to avoid recommending too many similar tracks.
 
 Some prompts to answer:
 

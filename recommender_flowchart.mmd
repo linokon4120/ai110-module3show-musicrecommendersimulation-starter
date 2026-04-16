@@ -1,0 +1,13 @@
+flowchart TD
+  A[User Prefs] --> B[Load songs.csv]
+  B --> C{For each song}
+  C --> D[Check genre match]
+  C --> E[Check mood match]
+  C --> F[Compute energy closeness]
+  D --> G[Add genre points]
+  E --> G[Add mood points]
+  F --> G[Add energy similarity]
+  G --> H[Compute total song score]
+  H --> I[Collect scored songs]
+  I --> J[Sort songs by score]
+  J --> K[Return top K recommendations]

@@ -9,3 +9,11 @@ id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
 8,Night Drive Loop,Neon Echo,synthwave,moody,0.75,110,0.49,0.73,0.22
 9,Focus Flow,LoRoom,lofi,focused,0.40,80,0.59,0.60,0.78
 10,Rooftop Lights,Indigo Parade,indie pop,happy,0.76,124,0.81,0.82,0.35
+11,Sunset Letters,Maple Drive,country,nostalgic,0.55,95,0.72,0.58,0.84
+12,Afterglow Kiss,Luna Hart,R&B,romantic,0.68,88,0.86,0.74,0.45
+13,Picnic Day,Saffron Trail,folk,playful,0.60,100,0.80,0.70,0.77
+14,Symphony of Rain,Aria Ensemble,classical,dreamy,0.30,62,0.66,0.32,0.92
+15,Island Breeze,Zion Tide,reggae,mellow,0.50,82,0.78,0.66,0.68
+16,Thunder Forge,Iron Pulse,metal,dramatic,0.94,156,0.40,0.55,0.12
+17,City Lights,Neon Soul,hip-hop,energized,0.88,110,0.74,0.82,0.28
+18,Moon Market,Sahara Rhythms,world,uplifting,0.65,105,0.83,0.69,0.52
