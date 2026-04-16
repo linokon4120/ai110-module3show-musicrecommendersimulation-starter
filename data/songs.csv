@@ -1,19 +1,19 @@
-id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
-1,Sunrise City,Neon Echo,pop,happy,0.82,118,0.84,0.79,0.18
-2,Midnight Coding,LoRoom,lofi,chill,0.42,78,0.56,0.62,0.71
-3,Storm Runner,Voltline,rock,intense,0.91,152,0.48,0.66,0.10
-4,Library Rain,Paper Lanterns,lofi,chill,0.35,72,0.60,0.58,0.86
-5,Gym Hero,Max Pulse,pop,intense,0.93,132,0.77,0.88,0.05
-6,Spacewalk Thoughts,Orbit Bloom,ambient,chill,0.28,60,0.65,0.41,0.92
-7,Coffee Shop Stories,Slow Stereo,jazz,relaxed,0.37,90,0.71,0.54,0.89
-8,Night Drive Loop,Neon Echo,synthwave,moody,0.75,110,0.49,0.73,0.22
-9,Focus Flow,LoRoom,lofi,focused,0.40,80,0.59,0.60,0.78
-10,Rooftop Lights,Indigo Parade,indie pop,happy,0.76,124,0.81,0.82,0.35
-11,Sunset Letters,Maple Drive,country,nostalgic,0.55,95,0.72,0.58,0.84
-12,Afterglow Kiss,Luna Hart,R&B,romantic,0.68,88,0.86,0.74,0.45
-13,Picnic Day,Saffron Trail,folk,playful,0.60,100,0.80,0.70,0.77
-14,Symphony of Rain,Aria Ensemble,classical,dreamy,0.30,62,0.66,0.32,0.92
-15,Island Breeze,Zion Tide,reggae,mellow,0.50,82,0.78,0.66,0.68
-16,Thunder Forge,Iron Pulse,metal,dramatic,0.94,156,0.40,0.55,0.12
-17,City Lights,Neon Soul,hip-hop,energized,0.88,110,0.74,0.82,0.28
-18,Moon Market,Sahara Rhythms,world,uplifting,0.65,105,0.83,0.69,0.52
+id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness,popularity,release_decade,detailed_moods,artist_popularity,instrumental
+1,Sunrise City,Neon Echo,pop,happy,0.82,118,0.84,0.79,0.18,85,2020s,"happy,euphoric",90,0.1
+2,Midnight Coding,LoRoom,lofi,chill,0.42,78,0.56,0.62,0.71,70,2010s,"chill,relaxed",75,0.2
+3,Storm Runner,Voltline,rock,intense,0.91,152,0.48,0.66,0.10,80,2010s,"intense,aggressive",85,0.05
+4,Library Rain,Paper Lanterns,lofi,chill,0.35,72,0.60,0.58,0.86,65,2020s,"chill,nostalgic",70,0.3
+5,Gym Hero,Max Pulse,pop,intense,0.93,132,0.77,0.88,0.05,90,2010s,"intense,motivational",88,0.0
+6,Spacewalk Thoughts,Orbit Bloom,ambient,chill,0.28,60,0.65,0.41,0.92,60,2020s,"chill,dreamy",68,0.8
+7,Coffee Shop Stories,Slow Stereo,jazz,relaxed,0.37,90,0.71,0.54,0.89,75,1990s,"relaxed,nostalgic",80,0.4
+8,Night Drive Loop,Neon Echo,synthwave,moody,0.75,110,0.49,0.73,0.22,78,2010s,"moody,dramatic",82,0.1
+9,Focus Flow,LoRoom,lofi,focused,0.40,80,0.59,0.60,0.78,72,2020s,"focused,concentrated",76,0.25
+10,Rooftop Lights,Indigo Parade,indie pop,happy,0.76,124,0.81,0.82,0.35,82,2010s,"happy,uplifting",84,0.15
+11,Sunset Letters,Maple Drive,country,nostalgic,0.55,95,0.72,0.58,0.84,68,1980s,"nostalgic,romantic",72,0.2
+12,Afterglow Kiss,Luna Hart,R&B,romantic,0.68,88,0.86,0.74,0.45,77,2000s,"romantic,euphoric",79,0.1
+13,Picnic Day,Saffron Trail,folk,playful,0.60,100,0.80,0.70,0.77,63,2010s,"playful,uplifting",65,0.3
+14,Symphony of Rain,Aria Ensemble,classical,dreamy,0.30,62,0.66,0.32,0.92,55,1800s,"dreamy,serene",60,0.95
+15,Island Breeze,Zion Tide,reggae,mellow,0.50,82,0.78,0.66,0.68,73,1990s,"mellow,relaxed",74,0.2
+16,Thunder Forge,Iron Pulse,metal,dramatic,0.94,156,0.40,0.55,0.12,76,2000s,"dramatic,aggressive",78,0.0
+17,City Lights,Neon Soul,hip-hop,energized,0.88,110,0.74,0.82,0.28,92,2020s,"energized,motivational",95,0.05
+18,Moon Market,Sahara Rhythms,world,uplifting,0.65,105,0.83,0.69,0.52,58,2010s,"uplifting,euphoric",62,0.4

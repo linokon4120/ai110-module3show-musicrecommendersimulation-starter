@@ -59,37 +59,77 @@ def load_songs(csv_path: str) -> List[Dict]:
             row['valence'] = float(row['valence'])
             row['danceability'] = float(row['danceability'])
             row['acousticness'] = float(row['acousticness'])
+            row['popularity'] = int(row['popularity'])
+            row['artist_popularity'] = int(row['artist_popularity'])
+            row['instrumental'] = float(row['instrumental'])
             songs.append(row)
     return songs
 
-def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
+def score_song(user_prefs: Dict, song: Dict, mode: str = 'balanced') -> Tuple[float, List[str]]:
     """Scores a song based on user preferences and returns score with reasons."""
     score = 0.0
     reasons = []
     
-    # Genre match: +2.0
+    # Set weights based on mode
+    if mode == 'genre_first':
+        genre_w, mood_w, energy_w = 3.0, 1.0, 1.0
+    elif mode == 'mood_first':
+        genre_w, mood_w, energy_w = 1.0, 3.0, 1.0
+    elif mode == 'energy_focused':
+        genre_w, mood_w, energy_w = 1.0, 1.0, 3.0
+    else:  # balanced
+        genre_w, mood_w, energy_w = 1.0, 1.0, 2.0
+    
+    # Genre match
     if song['genre'] == user_prefs['genre']:
-        score += 2.0
-        reasons.append("genre match (+2.0)")
+        score += genre_w
+        reasons.append(f"genre match (+{genre_w})")
     
-    # Mood match: +1.0
+    # Mood match
     if song['mood'] == user_prefs['mood']:
-        score += 1.0
-        reasons.append("mood match (+1.0)")
+        score += mood_w
+        reasons.append(f"mood match (+{mood_w})")
     
-    # Energy similarity: 1.0 - abs(diff)
+    # Energy similarity
     energy_diff = abs(song['energy'] - user_prefs['energy'])
-    energy_score = 1.0 - energy_diff
+    energy_score = energy_w * (1.0 - energy_diff)
     score += energy_score
     reasons.append(f"energy closeness ({energy_score:.2f})")
     
+    # Popularity bonus
+    pop_bonus = (song['popularity'] / 100) * 0.5
+    score += pop_bonus
+    reasons.append(f"song popularity ({pop_bonus:.2f})")
+    
+    # Release decade match
+    if song.get('release_decade') == user_prefs.get('preferred_decade'):
+        score += 1.0
+        reasons.append("decade match (+1.0)")
+    
+    # Detailed moods match
+    if 'detailed_moods' in song:
+        moods = song['detailed_moods'].split(',')
+        if user_prefs['mood'] in moods:
+            score += 0.5
+            reasons.append("detailed mood match (+0.5)")
+    
+    # Artist popularity bonus
+    artist_bonus = (song['artist_popularity'] / 100) * 0.3
+    score += artist_bonus
+    reasons.append(f"artist popularity ({artist_bonus:.2f})")
+    
+    # Instrumental preference
+    if user_prefs.get('prefers_instrumental', False) and song.get('instrumental', 0) > 0.5:
+        score += 0.5
+        reasons.append("instrumental match (+0.5)")
+    
     return score, reasons
 
-def recommend_songs(user_prefs: Dict, songs: List[Dict], k: int = 5) -> List[Tuple[Dict, float, str]]:
+def recommend_songs(user_prefs: Dict, songs: List[Dict], k: int = 5, mode: str = 'balanced') -> List[Tuple[Dict, float, str]]:
     """Recommends top k songs based on scoring and ranking."""
     scored_songs = []
     for song in songs:
-        score, reasons = score_song(user_prefs, song)
+        score, reasons = score_song(user_prefs, song, mode)
         explanation = ", ".join(reasons)
         scored_songs.append((song, score, explanation))
     

@@ -45,6 +45,12 @@ Running `python -m src.main` with the default pop/happy/0.8 energy profile:
 
 ![Terminal output showing recommendations](screenshot-result.png)
 
+### Stress Testing with Diverse Profiles
+
+Running `python -m src.main` with multiple profiles including adversarial cases:
+
+![Terminal output for diverse profiles](screenshot-each-profile.png)
+
 Some prompts to answer:
 
 - What features does each `Song` use in your system
