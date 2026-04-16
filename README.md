@@ -39,6 +39,12 @@ Specific features used in this simulation:
 
 This system might over-prioritize genre, potentially ignoring great songs that match the user's mood or energy but come from different genres. It could also favor songs with extreme energy values if the user's target is at the edges, and it lacks diversity mechanisms to avoid recommending too many similar tracks.
 
+### Sample Output
+
+Running `python -m src.main` with the default pop/happy/0.8 energy profile:
+
+![Terminal output showing recommendations](screenshot-result.png)
+
 Some prompts to answer:
 
 - What features does each `Song` use in your system
